@@ -44,7 +44,7 @@ try:
             try:
                 IP = input("\033[1;93m-\033[1;95mIP\033[1;93m->\033[1;92m ")
                 PORT = int(input("\033[1;93m-\033[1;95mPORT\033[1;93m->\033[1;92m "))
-                time = 1
+                time = 0.2
                 cnx.settimeout(time)
                 n = cnx.connect_ex((IP,PORT))
 
@@ -106,7 +106,7 @@ try:
                 for key, value in ports.items():
 
                     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-                    s.settimeout(1.5)
+                    s.settimeout(0.2)
                     code = s.connect_ex((ip, key))
                     if code == 0:
 
